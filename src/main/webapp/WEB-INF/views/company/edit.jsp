@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Dodaj podmiot</title>
+    <title>Edytuj podmiot</title>
 
     <!-- Custom fonts for this template-->
     <link href="<c:url value="/resources/vendor/fontawesome-free/css/all.min.css"/>" rel="stylesheet" type="text/css">
@@ -68,14 +68,16 @@
                     <form:errors path="regon"/><br>
                     PKD <form:input path="PKD"/><br>
                     <form:errors path="PKD"/><br>
+                    Status inwentaryzacji <form:select path="statusOfInventory" items="${statusOfInventory}"/><br>
+                    <form:errors path="statusOfInventory"/><br>
+                    Koordynator spółki <form:select itemValue="id" itemLabel="username" path="user" items="${users}" /><br>
+                    <form:errors path="user"/><br>
                     Dochód/strata spółki <form:input path="incomes"/><br>
                     <form:errors path="incomes"/><br>
 
                     <input type="submit">
 
                 </form:form>
-
-
 
 
             </div>
@@ -126,14 +128,14 @@
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="resources/vendor/jquery/jquery.min.js"></script>
+<script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="resources/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
+<script src="resources/js/sb-admin-2.min.js"></script>
 
 </body>
 

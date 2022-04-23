@@ -43,7 +43,7 @@
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Witaj ponownie!</h1>
                                 </div>
-                                <form method="post">
+                                <form method="post" action="/login">
                                     <div><label> User Name : <input type="text" name="username"/> </label></div>
                                     <div><label> Password: <input type="password" name="password"/> </label></div>
                                     <div><input type="submit" value="Zaloguj"/></div>
@@ -67,14 +67,14 @@
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="resources/vendor/jquery/jquery.min.js"></script>
+<script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="resources/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
+<script src="resources/js/sb-admin-2.min.js"></script>
 
 </body>
 

@@ -64,6 +64,8 @@
                   <th>Id</th>
                   <th>Nazwa</th>
                   <th>NIP</th>
+                  <th>Status inwentaryzacji</th>
+                  <th>Koordynator spółki</th>
                   <th>Akcje</th>
                 </tr>
                 </thead>
@@ -73,6 +75,8 @@
                   <td>${company.id}</td>
                   <td>${company.name}</td>
                   <td>${company.nip}</td>
+                  <td>${company.statusOfInventory}</td>
+                  <td>${company.user.username}</td>
                   <td>
                     <a href="<c:url value="/company/delete/${company.id}"/>">Usuń</a>
                     <a href="<c:url value="/company/edit/${company.id}"/>">Edytuj</a>
@@ -134,21 +138,21 @@
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="resources/vendor/jquery/jquery.min.js"></script>
+<script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="resources/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
+<script src="resources/js/sb-admin-2.min.js"></script>
 
 <!-- Page level plugins -->
-<script src="vendor/datatables/jquery.dataTables.min.js"></script>
-<script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="resources/vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="resources/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
 <!-- Page level custom scripts -->
-<script src="js/demo/datatables-demo.js"></script>
+<script src="resources/js/demo/datatables-demo.js"></script>
 
 </body>
 

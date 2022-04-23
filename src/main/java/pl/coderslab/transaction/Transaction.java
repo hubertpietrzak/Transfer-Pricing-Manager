@@ -1,6 +1,8 @@
 package pl.coderslab.transaction;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 import pl.coderslab.company.Company;
 
@@ -10,12 +12,14 @@ import javax.persistence.*;
 @Entity
 @Data
 @Table(name="transactions")
+@Getter
+@Setter
 @ToString
 public class Transaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
     @ManyToOne
     private Company company;
@@ -37,6 +41,7 @@ public class Transaction {
 
 
     private String year;
+
 
     private String statusOfDocumentation;
 

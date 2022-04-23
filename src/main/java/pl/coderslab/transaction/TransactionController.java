@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import pl.coderslab.admin.UserRepository;
 import pl.coderslab.company.CompanyRepository;
 
 import javax.validation.Valid;
@@ -16,11 +17,13 @@ public class TransactionController {
 
     private final TransactionRepository transactionRepository;
     private final CompanyRepository companyRepository;
+    private final UserRepository userRepository;
 
 
-    public TransactionController(TransactionRepository transactionRepository, CompanyRepository companyRepository) {
+    public TransactionController(TransactionRepository transactionRepository, CompanyRepository companyRepository, UserRepository userRepository) {
         this.transactionRepository = transactionRepository;
         this.companyRepository = companyRepository;
+        this.userRepository = userRepository;
     }
     @GetMapping("/add")
     public String addForm(Model model) {
@@ -47,6 +50,8 @@ public class TransactionController {
     @GetMapping("/edit/{id}")
     public String edit(@PathVariable long id, Model model) {
         model.addAttribute("transaction",transactionRepository.findById(id));
+        model.addAttribute("companies", companyRepository.findAll());
+        model.addAttribute("users", userRepository.findAll());
         return "transaction/edit";
     }
 

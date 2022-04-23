@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -136,16 +137,12 @@
                             <!-- Card Header - Dropdown -->
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h6 class="m-0 font-weight-bold text-primary">Rozpoczęte dokumentacje</h6>
-                                <div class="dropdown no-arrow">
-                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    </a>
-                                </div>
+
                             </div>
                             <!-- Card Body -->
                             <div class="card-body">
                                 <div class="chart-area">
-                                    <canvas id="myAreaChart"></canvas>
+
                                 </div>
                             </div>
                         </div>
@@ -219,38 +216,22 @@
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="resources/vendor/jquery/jquery.min.js"></script>
+<script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="resources/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
+<script src="resources/js/sb-admin-2.min.js"></script>
 
 <!-- Page level plugins -->
-<script src="vendor/chart.js/Chart.min.js"></script>
+<script src="resources/vendor/chart.js/Chart.min.js"></script>
 
 <!-- Page level custom scripts -->
-<script src="js/demo/chart-area-demo.js"></script>
-<script src="js/demo/chart-pie-demo.js"></script>
+<script src="resources/js/demo/chart-area-demo.js"></script>
+<script src="resources/js/demo/chart-pie-demo.js"></script>
 
 </body>
 
-</html>
-<%--
-  Created by IntelliJ IDEA.
-  User: hubert
-  Date: 07.04.2022
-  Time: 16:22
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
-
-</body>
 </html>

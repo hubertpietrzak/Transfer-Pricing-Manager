@@ -41,7 +41,7 @@
     </div>
     <!-- Nav Item - Dokumentacje -->
     <li class="nav-item">
-        <a class="nav-link" href="/documentations/list">
+        <a class="nav-link" href="/documentation/list">
             <span>Dokumentacje</span></a>
     </li>
 
@@ -60,7 +60,7 @@
 
     <!-- Nav Item - Spółki -->
     <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="/user/list">
             <span>Koordynatorzy</span></a>
     </li>
 
@@ -74,16 +74,10 @@
 
     <!-- Nav Item - Dane -->
     <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-            <span>Edytuj dane</span></a>
+        <a class="nav-link" href="/user/profile">
+            <span>Profil</span></a>
     </li>
 
-
-    <!-- Nav Item - Hasło -->
-    <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-            <span>Zmień hasło</span></a>
-    </li>
 
     <!-- Nav Item - wyloguj -->
     <li class="nav-item">

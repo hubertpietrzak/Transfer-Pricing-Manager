@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,16 +44,20 @@
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Zarejestruj</h1>
                                 </div>
-                                <form method="post" action="/user/register">
-                                    <div><label> Nazwa: <input type="text" name="username"/> </label></div>
-                                    <div><label> Nazwa: <input type="text" name="firstName"/> </label></div>
-                                    <div><label> Nazwisko: <input type="text" name="lastName"/> </label></div>
-                                    <div><label> Password: <input type="text" name="email"/> </label></div>
-                                    <div><label> Password: <input type="password" name="password"/> </label></div>
+                                <form:form method="post" modelAttribute="user">
+                                    Nazwa <form:input path="username"/><br>
+                                    <form:errors path="username"/><br>
+                                    Imię <form:input path="firstName"/><br>
+                                    <form:errors path="firstName"/><br>
+                                    Nazwisko <form:input path="lastName"/><br>
+                                    <form:errors path="lastName"/><br>
+                                    Email <form:input path="email"/><br>
+                                    <form:errors path="email"/><br>
+                                    Password <form:input type="password" path="password"/><br>
+                                    <form:errors path="password"/><br>
 
-                                    <div><input type="submit" value="Zarejestruj"/></div>
-<%--                                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>--%>
-                                </form>
+                                    <input type="submit">
+                                </form:form>
                                 <hr>
                             </div>
                         </div>
@@ -67,14 +72,14 @@
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="resources/vendor/jquery/jquery.min.js"></script>
+<script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="resources/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
+<script src="resources/js/sb-admin-2.min.js"></script>
 
 </body>
 

@@ -67,6 +67,8 @@
                     <form:errors path="regon"/><br>
                     PKD <form:input path="PKD"/><br>
                     <form:errors path="PKD"/><br>
+                    Koordynator spółki <form:select itemValue="id" itemLabel="username" path="user" items="${users}" /><br>
+                    <form:errors path="user"/><br>
                     Dochód/strata spółki <form:input path="incomes"/><br>
                     <form:errors path="incomes"/><br>
 
@@ -123,25 +125,16 @@
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="resources/vendor/jquery/jquery.min.js"></script>
+<script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="resources/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
+<script src="resources/js/sb-admin-2.min.js"></script>
 
 </body>
 
 </html>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
 
-
-
-</body>
-</html>

@@ -1,6 +1,7 @@
 package pl.coderslab.company;
 
 import lombok.Data;
+import pl.coderslab.admin.User;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -9,6 +10,7 @@ import javax.validation.constraints.NotBlank;
 @Data
 @Table(name="companies")
 public class Company {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,6 +44,10 @@ public class Company {
 
 
     private String statusOfInventory;
+
+    @ManyToOne
+    private User user;
+
 
 
 

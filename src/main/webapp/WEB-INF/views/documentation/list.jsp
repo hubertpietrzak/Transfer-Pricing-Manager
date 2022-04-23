@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!DOCTYPE html>
@@ -65,7 +66,6 @@
                                     <th>Podmiot</th>
                                     <th>Kontrahent</th>
                                     <th>Typ transakcji</th>
-                                    <th>Kategoria transakcji</th>
                                     <th>Opis transakcji</th>
                                     <th>Wartość netto transakcji</th>
                                     <th>Wartość dokonanych płatności</th>
@@ -79,11 +79,10 @@
                                     <td>${documentation.companies}</td>
                                     <td>${documentation.contractors}</td>
                                     <td>${documentation.typeOfTransaction}</td>
-                                    <td>${documentation.categoryOfTransaction}</td>
                                     <td>${documentation.description}</td>
                                     <td>${documentation.netValue}</td>
                                     <td>${documentation.paidValue}</td>
-                                    <td>${documentation.status}</td>
+                                    <td><form:select path="statusOfDocumentation" items="${statusOfDocumentation}"/><br></td>
 
                                 </tr>
                                 </c:forEach>
@@ -141,21 +140,21 @@
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="resources/vendor/jquery/jquery.min.js"></script>
+<script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="resources/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
+<script src="resources/js/sb-admin-2.min.js"></script>
 
 <!-- Page level plugins -->
-<script src="vendor/datatables/jquery.dataTables.min.js"></script>
-<script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="resources/vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="resources/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
 <!-- Page level custom scripts -->
-<script src="js/demo/datatables-demo.js"></script>
+<script src="resources/js/demo/datatables-demo.js"></script>
 
 </body>
 

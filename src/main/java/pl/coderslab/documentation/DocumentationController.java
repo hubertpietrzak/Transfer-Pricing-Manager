@@ -86,6 +86,11 @@ public class DocumentationController {
                 "Transakcje dotyczące restrukturyzacji",
                 "Inne transakcje");
     }
+    @ModelAttribute("statusOfDocumentation")
+    public List<String> statusOfDocumentation() {
+        return Arrays.asList("Gotowa",
+                "W trakcie");
+    }
 
 
 }
