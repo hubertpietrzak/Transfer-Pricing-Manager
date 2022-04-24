@@ -6,6 +6,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.company.CompanyRepository;
 
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+import javax.print.Doc;
 import javax.validation.Valid;
 import java.util.Arrays;
 import java.util.List;
@@ -91,6 +94,11 @@ public class DocumentationController {
         return Arrays.asList("Gotowa",
                 "W trakcie");
     }
+
+    EntityManager em = emf.createEntityManager();
+
+    TypedQuery<Documentation> query = em.createNamedQuery("select sum(net_value) as net, company_id,type_of_transaction from transactions group by company_id, type_of_transaction having net > 2000000", Documentation.class);
+    List<Documentation> items = query.getResultList();
 
 
 }

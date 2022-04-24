@@ -51,7 +51,7 @@ public class UserController {
             model.addAttribute("user", user);
             return "user/edit";
         }
-        userRepository.save(user);
+        userService.saveUser(user);
         return "redirect:/user/profile";
     }
     @GetMapping("/profile")
