@@ -69,20 +69,24 @@
                                     <th>Opis transakcji</th>
                                     <th>Wartość netto transakcji</th>
                                     <th>Wartość dokonanych płatności</th>
+                                    <th>Rok</th>
                                     <th>Status</th>
                                 </tr>
                                 </thead>
-                                <c:forEach items="${documentations}" var="documentation">
+                                <c:forEach items="${documentation}" var="documentation">
                                 <tbody>
                                 <tr>
                                     <td>${documentation.id}</td>
-                                    <td>${documentation.companies}</td>
-                                    <td>${documentation.contractors}</td>
+                                    <td>${documentation.company.name}</td>
+                                    <td>${documentation.contractors.name}</td>
                                     <td>${documentation.typeOfTransaction}</td>
                                     <td>${documentation.description}</td>
                                     <td>${documentation.netValue}</td>
                                     <td>${documentation.paidValue}</td>
-                                    <td><form:select path="statusOfDocumentation" items="${statusOfDocumentation}"/><br></td>
+                                    <td>${documentation.year}</td>
+                                    <td>${documentation.statusOfDocumentation}<br>
+                                        <a href="<c:url value="/documentation/edit/${documentation.id}"/>">Zmień status</a></td>
+<%--                                    <td><form:select path="statusOfDocumentation" items="${statusOfDocumentation}"/><br></td>--%>
 
                                 </tr>
                                 </c:forEach>

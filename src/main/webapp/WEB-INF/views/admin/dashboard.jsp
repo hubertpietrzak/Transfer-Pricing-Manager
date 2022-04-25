@@ -62,7 +62,7 @@
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                             Dokumentacje (wszystkie) </div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">100</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">${finishDocs+inProgress+nullStatus}</div>
                                     </div>
                                     <div class="col-auto">
                                     </div>
@@ -80,7 +80,7 @@
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                             Dokumentacje (gotowe) </div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">20</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">${finishDocs}</div>
                                     </div>
                                     <div class="col-auto">
                                     </div>
@@ -99,7 +99,7 @@
                                         </div>
                                         <div class="row no-gutters align-items-center">
                                             <div class="col-auto">
-                                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">5 </div>
+                                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">${inProgress}</div>
                                             </div>
                                         </div>
                                     </div>
@@ -118,7 +118,7 @@
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                             Pozostało </div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">75</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">${nullStatus}</div>
                                     </div>
                                     <div class="col-auto">
                                     </div>
@@ -142,6 +142,38 @@
                             <!-- Card Body -->
                             <div class="card-body">
                                 <div class="chart-area">
+                                    <table>
+                                        <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Podmiot</th>
+                                        <th>Kontrahent</th>
+                                        <th>Typ transakcji</th>
+                                        <th>Opis transakcji</th>
+                                        <th>Wartość netto transakcji</th>
+                                        <th>Wartość dokonanych płatności</th>
+                                        <th>Rok</th>
+
+                                    </tr>
+                                    </thead>
+                                    <c:forEach items="${documentation}" var="documentation">
+                                    <tbody>
+                                    <tr>
+                                        <td>${documentation.id}</td>
+                                        <td>${documentation.company.name}</td>
+                                        <td>${documentation.contractors.name}</td>
+                                        <td>${documentation.typeOfTransaction}</td>
+                                        <td>${documentation.description}</td>
+                                        <td>${documentation.netValue}</td>
+                                        <td>${documentation.paidValue}</td>
+                                        <td>${documentation.year}</td>
+
+
+
+                                    </tr>
+                                    </c:forEach>
+                                    </tbody>
+                                    </table>
 
                                 </div>
                             </div>

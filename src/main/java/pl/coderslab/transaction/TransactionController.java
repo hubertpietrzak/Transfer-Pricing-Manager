@@ -6,6 +6,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.admin.UserRepository;
 import pl.coderslab.company.CompanyRepository;
+import pl.coderslab.documentation.Documentation;
+import pl.coderslab.documentation.DocumentationRepository;
 
 import javax.validation.Valid;
 import java.util.Arrays;
@@ -18,12 +20,14 @@ public class TransactionController {
     private final TransactionRepository transactionRepository;
     private final CompanyRepository companyRepository;
     private final UserRepository userRepository;
+    private final DocumentationRepository documentationRepository;
 
 
-    public TransactionController(TransactionRepository transactionRepository, CompanyRepository companyRepository, UserRepository userRepository) {
+    public TransactionController(TransactionRepository transactionRepository, CompanyRepository companyRepository, UserRepository userRepository, DocumentationRepository documentationRepository) {
         this.transactionRepository = transactionRepository;
         this.companyRepository = companyRepository;
         this.userRepository = userRepository;
+        this.documentationRepository = documentationRepository;
     }
     @GetMapping("/add")
     public String addForm(Model model) {
@@ -38,6 +42,32 @@ public class TransactionController {
             return "transaction/add";
         }
         transactionRepository.save(transaction);
+
+        List<Documentation> listOfDocumentation = documentationRepository.findByYearAndCompany_IdAndTypeOfTransaction(
+                transaction.getYear(),
+                transaction.getCompany().getId(),
+                transaction.getTypeOfTransaction());
+
+        if (listOfDocumentation.isEmpty()) {
+            Documentation newDocumentation = new Documentation(
+                    transaction.getId(),
+                    transaction.getCompany(),
+                    transaction.getContractors(),
+                    transaction.getTypeOfTransaction(),
+                    transaction.getDescription(),
+                    transaction.getNetValue(),
+                    transaction.getPaidValue(),
+                    transaction.getYear(),
+                    transaction.getStatusOfDocumentation());
+
+            documentationRepository.save(newDocumentation);
+        } else {
+            Documentation existingDocumentation = listOfDocumentation.get(0);
+            existingDocumentation.setNetValue(transaction.getNetValue()+existingDocumentation.getNetValue());
+            existingDocumentation.setPaidValue(transaction.getPaidValue()+existingDocumentation.getPaidValue());
+            documentationRepository.save(existingDocumentation);
+        }
+
         return "redirect:/transaction/list";
     }
 

@@ -47,43 +47,43 @@
 
                                 <div class="text-s font-weight-bold text-primary text-uppercase mb-1">
                                     ID </div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">${company.id}</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">${company.id}</div><br>
 
                                 <div class="text-s font-weight-bold text-primary text-uppercase mb-1">
                                     Nazwa </div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">${company.name}</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">${company.name}</div><br>
 
                                 <div class="text-s font-weight-bold text-primary text-uppercase mb-1">
                                     Ulica </div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">${company.street}</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">${company.street}</div><br>
 
                                 <div class="text-s font-weight-bold text-primary text-uppercase mb-1">
                                     Kod pocztowy </div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">${company.zipCode}</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">${company.zipCode}</div><br>
 
                                 <div class="text-s font-weight-bold text-primary text-uppercase mb-1">
                                     Miasto </div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">${company.city}</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">${company.city}</div><br>
 
                                 <div class="text-s font-weight-bold text-primary text-uppercase mb-1">
                                     NIP </div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">${company.nip}</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">${company.nip}</div><br>
 
                                 <div class="text-s font-weight-bold text-primary text-uppercase mb-1">
                                     REGON </div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">${company.regon}</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">${company.regon}</div><br>
 
                                 <div class="text-s font-weight-bold text-primary text-uppercase mb-1">
                                     PKD </div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">${company.PKD}</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">${company.PKD}</div><br>
 
                                 <div class="text-s font-weight-bold text-primary text-uppercase mb-1">
                                     Dochód/strata </div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">${company.incomes}</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">${company.incomes}</div><br>
 
                                 <div class="text-s font-weight-bold text-primary text-uppercase mb-1">
                                     Koordynator </div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">${company.user}</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">${company.user.username}</div><br>
 
                                 <hr>
 

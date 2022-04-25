@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Dodaj transakcję</title>
+    <title>Zmień status</title>
 
     <!-- Custom fonts for this template-->
     <link href="<c:url value="/resources/vendor/fontawesome-free/css/all.min.css"/>" rel="stylesheet" type="text/css">
@@ -50,9 +50,10 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-4 text-gray-800">Dodaj transakcję</h1>
+                <h1 class="h3 mb-4 text-gray-800">Zmień status</h1>
 
-                <form:form method="post" modelAttribute="transaction">
+                <form:form method="post" modelAttribute="documentation" action="/documentation/update">
+                    <form:hidden path="id"/>
                     Podmiot <form:select path="company" multiple="false" class="formElement" items="${companies}" itemValue="id" itemLabel="name"/><br>
                     <form:errors path="company"/><br>
                     Kontrahent <form:select path="contractors" multiple="false" class="formElement" items="${companies}" itemValue="id" itemLabel="name"/><br>
@@ -65,8 +66,10 @@
                     <form:errors path="netValue"/><br>
                     Wartość dokonanych płatności <form:input path="paidValue"/><br>
                     <form:errors path="paidValue"/><br>
-                    Rok transakcji <form:input path="year"/><br>
+                    Rok <form:input path="year"/><br>
                     <form:errors path="year"/><br>
+                    Status dokumentacji <form:select path="statusOfDocumentation" items="${statusOfDocumentation}"/><br>
+                    <form:errors path="statusOfDocumentation"/><br>
 
                     <input type="submit">
                 </form:form>
@@ -133,3 +136,5 @@
 </body>
 
 </html>
+
+

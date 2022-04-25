@@ -1,15 +1,18 @@
 package pl.coderslab.documentation;
 
+import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.company.CompanyRepository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
+import javax.persistence.*;
 import javax.print.Doc;
 import javax.validation.Valid;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.util.Arrays;
 import java.util.List;
 
@@ -19,6 +22,8 @@ public class DocumentationController {
 
     private final DocumentationRepository documentationRepository;
     private final CompanyRepository companyRepository;
+
+
 
     public DocumentationController(DocumentationRepository documentationRepository, CompanyRepository companyRepository) {
         this.documentationRepository = documentationRepository;
@@ -52,6 +57,7 @@ public class DocumentationController {
     @GetMapping("/edit/{id}")
     public String edit(@PathVariable long id, Model model) {
         model.addAttribute("documentation",documentationRepository.findById(id));
+        model.addAttribute("companies", companyRepository.findAll());
         return "documentation/edit";
     }
 
@@ -95,10 +101,9 @@ public class DocumentationController {
                 "W trakcie");
     }
 
-    EntityManager em = emf.createEntityManager();
 
-    TypedQuery<Documentation> query = em.createNamedQuery("select sum(net_value) as net, company_id,type_of_transaction from transactions group by company_id, type_of_transaction having net > 2000000", Documentation.class);
-    List<Documentation> items = query.getResultList();
+
+
 
 
 }
